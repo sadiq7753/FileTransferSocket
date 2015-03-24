@@ -10,13 +10,14 @@ public class ClientCopy {
     public static void main(String[] args) throws Exception {  
         
         if(args.length != 3) {
-            System.out.println("Usage: java ClientCopy ($IP) ($PORT) (filename) ");
+            System.out.println("Usage: java ClientCopy ($IP) ($PORT) (file path) ");
         } else {
             Scanner tc = new Scanner(System.in);  
             System.out.println("File:");  
             String fName = args[2];
               
-            File f = new File("/home/ubuntu/workspace/socket-file/"+fName);  
+            //  /home/ubuntu/workspace/FileTransferSocket/
+            File f = new File(fName);  
             FileInputStream in = new FileInputStream(f);  
       
             Socket socket = new Socket(args[0], Integer.parseInt(args[1]));  

@@ -10,11 +10,13 @@ import java.net.Socket;
 public class ServerCopy {  
     public static void main(String[] args) {  
         
-        if (args.length != 1) {
+        if (args.length != 2) {
             System.out.println("Usage: java ClientServer ($PORT)");
         } 
         else {
             try {  
+            //  /home/ubuntu/workspace/FileTransferSocket/
+            String path = args[1];
             ServerSocket server = new ServerSocket(Integer.parseInt(args[0]));  
             Socket clSocket = server.accept();  
             InputStream in = clSocket.getInputStream();  
@@ -22,7 +24,7 @@ public class ServerCopy {
             BufferedReader reader = new BufferedReader(isr);  
             String fName = reader.readLine();  
             System.out.println(fName);  
-            File f1 = new File("/home/ubuntu/workspace/socket-file/saved-files/" + fName);  
+            File f1 = new File(path + fName);  
             FileOutputStream out = new FileOutputStream(f1);  
             int c;  
             while ((c = in.read()) != -1) {  

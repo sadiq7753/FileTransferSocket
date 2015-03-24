@@ -2,7 +2,5 @@
 
 Usage: 
 
-Change the dir at ClientCopy.java and ServerCopy.java and then: 
-
-Server: java ClientCopy ($IP) ($PORT) (filename) 
-Client: java ClientServer ($PORT)
+Server: java ClientCopy ($IP) ($PORT) (file path) 
+Client: java ClientServer ($PORT) (path for save archives)
